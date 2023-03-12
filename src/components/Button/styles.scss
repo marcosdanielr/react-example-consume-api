@@ -1,0 +1,22 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #568bfc;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.8rem 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+  
+  &:active {
+    background: #145fff;
+  }
+}

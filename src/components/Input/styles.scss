@@ -1,0 +1,19 @@
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  span {
+    color: black;
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    height: 1.8rem;
+    width: 100%;
+  }
+}
