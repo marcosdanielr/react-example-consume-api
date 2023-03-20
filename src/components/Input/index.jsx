@@ -1,6 +1,6 @@
 import './styles.scss'
 
-export function Input({ value, onChange, label, width, placeholder }) {
+export function Input({ value, onChange, label, width, placeholder, type }) {
   return (
     <div
       style={{
@@ -9,7 +9,13 @@ export function Input({ value, onChange, label, width, placeholder }) {
       }}
     >
       {label && <span>{label}</span>}
-      <input value={value} onChange={onChange} placeholder={placeholder} />
+      <input
+        type={Text}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        typeof={type}
+      />
     </div>
   )
 }

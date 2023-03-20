@@ -1,3 +1,7 @@
+import {
+  getAllByPlaceholderText,
+  getDefaultNormalizer
+} from '@testing-library/react'
 import axios from 'axios'
 import { useState } from 'react'
 import { Button } from '../../components/Button'
@@ -12,6 +16,7 @@ export function Main() {
   const [cep, setCep] = useState('')
   const [data, setData] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const [updated, setUpdated] = useState('test')
 
   async function getData() {
     setIsLoading(true)
@@ -33,27 +38,35 @@ export function Main() {
 
   return (
     <main className="content">
-      <Input
-        label="Digite seu CEP"
-        width={'40%'}
-        placeholder={'Digite seu cep'}
-        value={cep}
-        onChange={e => setCep(e.target.value)}
-      />
-      {/* if you need pass argument in function, you called like this:
+      <form>
+        <Input
+          label="Digite seu CEP:"
+          width={'40%'}
+          placeholder={'Digite seu cep'}
+          value={cep}
+          onChange={e => setCep(e.target.value)}
+          // after of press key
+          // onKeyUp={e => console.log(e)}
+          type={'submit'}
+        />
+
+        {/* if you need pass argument in function, you called like this:
       onClick={() => function(argument)}
       */}
-      <Button
-        disabled={isLoading}
-        title={isLoading ? 'Carregando' : 'Buscar'}
-        onClick={getData}
-      />
-      {/* in data initial state localidade is not exists, so I use ? is optional prop 
-      
+        <Button
+          disabled={isLoading}
+          title={isLoading ? 'Carregando' : 'Buscar'}
+          onClick={getData}
+        />
+      </form>
+
+      {/* in data initial state localidade is not exists, so I use ? is optional prop
+
       Validate if uf exists in data
       */}
 
-      <span>{data?.uf && `${data?.localidade}, ${data?.uf}`}</span>
+      <span>{data?.uf && `${data?.localidade}, ${data?.uf} `}</span>
+      <span>{`Bairro: ${data?.bairro}`}</span>
     </main>
   )
 }

@@ -7,3 +7,18 @@
   height: 100vh;
   gap: 2rem;
 }
+
+form {
+  width: 30%;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+span:hover{
+  color: #006464;
+  border-bottom: 0.066rem solid;
+}
+
